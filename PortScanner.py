@@ -22,6 +22,6 @@ for port in range(start, end+1):
     # returns an error indicator
     result = s.connect_ex((ip, port))
     if result == 0:
-        service = socket.getservbyport(port)
+        service = socket.getservbyport(port, "tcp")
         print("Port {} is open and runs {} \n".format(port, service))
     s.close()
